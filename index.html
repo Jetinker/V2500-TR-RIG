@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>V2500 TR Rig Calculator</title>
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="script.js"></script>
+</head>
+<body>
+
+  <h1>V2500 TR Rig Calculator</h1>
+  
+  <p style="color:red;"> FOR REFERENCE USE ONLY </p>
+  
+  <p> This calculator uses interpolation mapping to bring <br> any out of tolerance measurement ranging from <br> 0 - 5.5mm (and inch equivalent) into the center of <br> the associated tolerance range. This calculator <br> WILL NOT compensate for loose standards! <br> ex. applying more/less pressure on calipers when <br> taking measurements. Not paying attention to the <br> "lip" that is created around the circumference of a <br> laminated shim after it is peeled. Using an amount <br> of Play-Doh greater than the area of your thumb nail <br> and about 6mm(0.25 inch) thick. <br> To ensure a single solution return to tolerance, <br> keep all measurement practices as uniform as possible. 
+
+  <!-- Radio buttons for initial acceptance vs rigging -->
+  <p>
+    <strong>Select Tolerance Mode:</strong><br>
+    <label><input type="radio" name="initOption" value="1" checked> Initial Acceptance</label><br>
+    <label><input type="radio" name="initOption" value="2"> Rigging</label>
+  </p>
+
+  <!-- Radio buttons for unit choice -->
+  <p>
+    <strong>Select Unit:</strong><br>
+    <label><input type="radio" name="unitOption" value="in" checked> Inch (IN)</label><br>
+    <label><input type="radio" name="unitOption" value="mm"> Millimeter (MM)</label>
+  </p>
+
+  <!-- Bumper Measurements -->
+  <h2>Bumper, Radial, & Comp Struts Measurements</h2>
+  <p>Enter measurements:</p>
+  <div>
+    <label>Bumper Upper 1: <input type="text" id="bumper0"></label><br>
+    <label>Bumper Lower 1: <input type="text" id="bumper1"></label><br>
+    <label>Bumper 2:       <input type="text" id="bumper2"></label><br>
+    <label>Bumper 3:       <input type="text" id="bumper3"></label><br>
+    <label>Bumper 4:       <input type="text" id="bumper4"></label><br>
+    <label>Bumper 5:       <input type="text" id="bumper5"></label><br>
+    <label>Radial I/B:       <input type="text" id="bumper6"></label><br>
+    <label>Radial O/B:       <input type="text" id="bumper7"></label><br>
+    <label>Comp strut FWD:    <input type="text" id="ls4"></label><br>
+    <label>Comp strut MID:    <input type="text" id="ls5"></label><br>
+    <label>Comp strut AFT:    <input type="text" id="ls6"></label><br> 
+  </div>
+
+  <button onclick="checkBumpers()">Check Bumpers & Comp Struts</button>
+  <div id="bumperOutput" class="output"></div>
+
+  <hr>
+
+  <!-- Load Share & Compression Strut (POS2) -->
+  <h2>Load Share</h2>
+  <p>Enter measurements:</p>
+  <div>
+    <label>Load Share I/B UP:  <input type="text" id="ls0"></label><br>
+    <label>Load Share O/B UP:  <input type="text" id="ls1"></label><br>
+    <label>Load Share I/B LOW: <input type="text" id="ls2"></label><br>
+    <label>Load Share O/B LOW: <input type="text" id="ls3"></label><br>
+  </div>
+
+  <button onclick="checkLoadShareAndStruts()">Check Load Share</button>
+  <div id="lsOutput" class="output"></div>
+
+</body>
+</html>
